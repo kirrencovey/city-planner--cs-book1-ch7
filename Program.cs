@@ -47,27 +47,6 @@ namespace Planner
             TwoSeventeen.Purchase("Holly Black");
             FourTwoFour.Purchase("Sam White");
 
-            // Print the building information (place buildings in a list to make it easier)
-
-            List<Building> myBuildings = new List<Building>() {
-                FiveOneTwo,
-                ThreeThreeEight,
-                TwoSeventeen,
-                FourTwoFour
-            };
-
-    //         foreach (Building building in myBuildings)
-    //         {
-    //             Console.WriteLine($@"
-    // {building.GetAddress()}
-    // ------------------
-    // Designed by {building.GetDesigner()}
-    // Constructed on {building.GetDate()}
-    // Owned by {building.GetOwner()}
-    // {building.Volume} cubic meters of space
-    //             ");
-    //         }
-
             // Create a city
             City kirnville = new City("Kirnville", 1987);
 
@@ -78,17 +57,26 @@ namespace Planner
             kirnville.AddBuilding(TwoSeventeen);
             kirnville.AddBuilding(FourTwoFour);
 
-            kirnville.NewMayor("Me");
+            kirnville.NewMayor("Leslie Knope");
 
+            Console.WriteLine($@"
+{kirnville}
+
+    Buildings:");
             foreach (Building building in kirnville.CityBuildings) {
-                Console.WriteLine($@"
-    {building.GetAddress()}
-    ------------------
-    Designed by {building.GetDesigner()}
-    Constructed on {building.GetDate()}
-    Owned by {building.GetOwner()}
-    {building.Volume} cubic meters of space
-                ");
+                // Print building info using new ToString method!
+                // Much less code
+                Console.WriteLine(building);
+
+    // Print building info using the Get methods on Building:
+    //             Console.WriteLine($@"
+    // {building.GetAddress()}
+    // ------------------
+    // Designed by {building.GetDesigner()}
+    // Constructed on {building.GetDate()}
+    // Owned by {building.GetOwner()}
+    // {building.Volume} cubic meters of space
+    //             ");
             }
         }
     }

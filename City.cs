@@ -18,14 +18,24 @@ namespace Planner
         public void AddBuilding(Building building) {
             CityBuildings.Add(building);
         }
-        public string GetName() {
-            return _name;
-        }
-        public int GetYearEst() {
-            return _yearEst;
-        }
-        public string GetMayor() {
-            return _mayor;
+        // public string GetName() {
+        //     return _name;
+        // }
+        // public int GetYearEst() {
+        //     return _yearEst;
+        // }
+        // public string GetMayor() {
+        //     return _mayor;
+        // }
+        // Replace get methods with a ToString method:
+        public override string ToString() {
+            return $@"
+    ***********************
+    City of {_name}
+    ***********************
+    Established in {_yearEst}
+    Current Mayor: {_mayor}
+    ";
         }
     }
 }
